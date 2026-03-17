@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minikube-nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: minikube-nginx
+  template:
+    metadata:
+      labels:
+        component: minikube-nginx
+    spec:
+      containers:
+        - name: minikube-nginx
+          image: nginx:alpine3.18-slim
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

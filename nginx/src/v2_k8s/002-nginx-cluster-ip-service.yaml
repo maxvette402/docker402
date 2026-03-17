@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minikube-nginx-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: minikube-nginx
+  ports:
+    - port: 80
+      targetPort: 80
