@@ -20,8 +20,3 @@ tail -f -n 1000 /var/log/nginx/access.log
 
 # play
 curl -kI https://localhost
-
-# TAG and PUSH nginx:v18 as marco27/simple-nginx:v1
-docker tag nginx:v18 marco27/nginx-bitcoin-block-count:v1
-docker login
-docker push marco27/nginx-bitcoin-block-count:v1
